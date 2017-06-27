@@ -1,0 +1,31 @@
+<div>
+  <cp-page-header
+    [headers]="[speaker?.username, '@' + speaker?.publicName]"
+    [pipe]="false"
+  ></cp-page-header>
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <p class="title is-3 has-text-muted">
+            {{speaker?.bio}}
+          </p>
+          <hr/>
+          <p class="title is-4">
+            Talks :
+          </p>
+
+          <div class="columns" *ngFor="let chunkTalks of speaker?.talks">
+            <div class="column is-6" *ngFor="let talk of chunkTalks">
+              <cp-talk-card
+                [talk]="talk"
+              >
+              </cp-talk-card>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
