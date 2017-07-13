@@ -45,6 +45,7 @@ class Login extends Component {
           this.setState({
             userNotFound: true
           });
+          throw err;
         })
     } else {
       this.setState({
