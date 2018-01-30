@@ -1,0 +1,36 @@
+<div>
+  <cp-page-header
+    [headers]="['Conferences']"
+  >
+    <span class="title is-4 is-info is-pulled-right ">
+      <a
+        class="icon is-large"
+        routerLink="/secure/conference"
+      >
+        <i class="fa fa-plus-circle"></i>
+      </a>
+      </span>
+  </cp-page-header>
+
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <cp-table
+            [labels]="['ID', 'Name', 'City', 'Country', 'Start Date']"
+            [amountPerPage]="amountPerPage"
+            [total]="total"
+            [pageNumber]="pageNumber"
+            [navigateToPage]="navigateToPage"
+          >
+            <tr cp-conference-table-row *ngFor="let conference of conferences"
+                [conference]="conference"
+                [deleteConference]="deleteConference"
+            >
+            </tr>
+          </cp-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

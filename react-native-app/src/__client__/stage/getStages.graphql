@@ -1,0 +1,7 @@
+query getStages {
+  stages {
+    id
+    name
+    imageUrl
+  }
+}

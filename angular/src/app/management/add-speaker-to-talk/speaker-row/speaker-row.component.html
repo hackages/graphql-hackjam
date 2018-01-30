@@ -1,0 +1,10 @@
+<a
+  class="panel-block"
+  (click)="onClick(speaker.id)"
+>
+<span class="panel-icon">
+    <i class="fa fa-check" *ngIf="attending"></i>
+    <i class="fa fa-user" *ngIf="!attending"></i>
+</span>
+  {{speaker.publicName}}
+</a>

@@ -1,0 +1,94 @@
+<cp-page-header
+  [headers]="['Talks', 'Management', 'Add|update']"
+>
+</cp-page-header>
+
+<cp-success-modal
+  [isVisible]="showModalSuccess"
+  title="Success"
+  [subTitle]=""
+  [text]="'The talk has successfully been ' + (idParam ? 'updated' : 'added')"
+>
+</cp-success-modal>
+
+<form
+  novalidate
+  [formGroup]="talkForm"
+  class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">Title*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="talkForm.get('title').invalid && talkForm.get('title').dirty"
+              type="text"
+              placeholder="Talk title"
+              formControlName="title"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Description*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="talkForm.get('description').invalid && talkForm.get('description').dirty"
+              type="text"
+              placeholder="An awesome talk"
+              formControlName="description"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Room</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="talkForm.get('room').invalid && talkForm.get('room').dirty"
+              type="text"
+              placeholder="A 41b"
+              formControlName="room"
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Starts at*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="talkForm.get('startsAt').invalid && talkForm.get('startsAt').dirty"
+              type="text"
+              placeholder="12:00"
+              formControlName="startsAt"
+              required
+            />
+          </p>
+        </div>
+
+        <div class="field is-grouped">
+          <p class="control">
+
+            <button
+              class="button"
+              [class.is-danger]="talkForm.invalid"
+              [class.is-info]="talkForm.valid"
+              [disabled]="talkForm.invalid"
+              (click)="submitTalk($event)"
+            >
+              <span *ngIf="!idParam">Add</span>
+              <span *ngIf="idParam">Update</span>
+            </button>
+          </p>
+          <p class="control">
+            <a routerLink="/secure/talks" class="button is-link">Cancel</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

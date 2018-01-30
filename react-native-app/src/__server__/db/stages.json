@@ -1,0 +1,21 @@
+[{
+  "id": "1",
+  "name": "Arena Stage",
+  "imageUrl": "http://homedeas.com/wp-content/uploads/2014/03/bregenz-festival-stages-5-580x400.jpg",
+  "scheduleId": "1"
+}, {
+  "id": "2",
+  "name": "KluB C",
+  "imageUrl": "https://i.ytimg.com/vi/fUHMQ1LQg7o/maxresdefault.jpg",
+  "scheduleId": "2"
+},{
+  "id": "3",
+  "name": "The Barn",
+  "imageUrl": "https://i.ytimg.com/vi/AiiB944v9Hk/maxresdefault.jpg",
+  "scheduleId": "3"
+},{
+  "id": "4",
+  "name": "Flames Stage",
+  "imageUrl": "http://204ksp3os7r62w5qhokpkxci.wpengine.netdna-cdn.com/wp-content/uploads/Ultra-Main-Stage-EDM-Kevin-for-Ultra-Music-Festival-Day-2-3-620x413.jpg",
+  "scheduleId": "4"
+}]

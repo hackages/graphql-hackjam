@@ -1,0 +1,58 @@
+<form
+  [formGroup]="loginForm"
+  class="container"
+  novalidate
+>
+  <div class="columns is-vcentered">
+    <div class="column is-4 is-offset-4">
+      <h1 class="title">
+        Sign in
+      </h1>
+      <div class="box">
+        <label class="label">Email*</label>
+        <p class="control">
+
+          <input
+            class="input"
+            [class.is-danger]="loginForm.get('email').invalid && loginForm.get('email').dirty"
+            type="email"
+            placeholder="jsmith@example.org"
+            formControlName="email"
+            required
+          />
+        </p>
+        <label class="label">Password*</label>
+        <p class="control">
+          <input
+            class="input"
+            [class.is-danger]="loginForm.get('password').invalid && loginForm.get('password').dirty"
+            type="password"
+            placeholder="●●●●●●●"
+            formControlName="password"
+            required
+          />
+        </p>
+
+        <p *ngIf="userNotFound" class="is-danger">
+          User not found
+        </p>
+
+        <hr/>
+
+        <p class="control">
+          <button
+            class="button is-outlined is-large is-fullwidth"
+            [class.is-danger]="loginForm.invalid"
+            [class.is-info]="loginForm.valid"
+            [disabled]="loginForm.invalid "
+            (click)="login(loginForm.getRawValue())"
+          >Login
+          </button>
+        </p>
+      </div>
+      <p class="has-text-centered">
+        <a routerLink="/authentication/register">Register</a>
+      </p>
+    </div>
+  </div>
+</form>
