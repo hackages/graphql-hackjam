@@ -1,8 +1,7 @@
 import React from 'react';
-import {Image, Text, View, StyleSheet, ImageBackground} from 'react-native';
+import {Text, View, StyleSheet, ImageBackground} from 'react-native';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-native';
-import { LinearGradient } from 'expo';
+import {Link} from 'react-router-dom';
 
 const Stage = ({stage: { name, imageUrl, id}}) => (
   <Link to={`/stage/${id}`}>

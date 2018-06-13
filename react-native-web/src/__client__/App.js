@@ -1,13 +1,14 @@
 import React from 'react';
 import {StatusBar, StyleSheet, View} from 'react-native';
-import { NativeRouter, Route} from 'react-router-native'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
-import Header from './src/__client__/Header';
-import Stages from './src/__client__/stage/Stages';
-import StageDetails from './src/__client__/stage/StageDetails';
-import Navigation from './src/__client__/navigation/Navigation';
-import Artists from './src/__client__/artists/Artists';
-import client from './src/__client__/apollo/apolloClient';
+import Header from './Header';
+import Stages from './stage/Stages';
+import StageDetails from './stage/StageDetails';
+import Navigation from './navigation/Navigation';
+import Artists from './artists/Artists';
+import client from './apollo/apolloClient';
+
 import {ApolloProvider} from 'react-apollo';
 
 export default class App extends React.Component {
@@ -16,7 +17,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <StatusBar barStyle="light-content" backgroundColor="#000088"/>
           <Header/>
-          <NativeRouter>
+          <Router>
             <View style={{flex: 1}}>
               <View style={styles.viewContainer}>
                 <Route exact path="/" component={Stages}/>
@@ -25,7 +26,7 @@ export default class App extends React.Component {
               </View>
               <Navigation style={styles.navigation}/>
             </View>
-          </NativeRouter>
+          </Router>
         </View>
     );
   }

@@ -1,8 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import NavigationButton from './NavigationButton';
-import { Ionicons } from '@expo/vector-icons';
-import {withRouter} from 'react-router-native';
+import {withRouter} from 'react-router-dom';
 
 const Navigation = ({style, location: {pathname}}) => (
   <View style={[styles.container, style]}>

@@ -1,7 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-native';
+import {Link} from 'react-router-dom';
 import {StyleSheet, Text, View} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 const routeMap = {
   artists: ['artists'],
@@ -10,21 +9,20 @@ const routeMap = {
 
 const NavigationButton = ({icon, to, currentPathname, label}) => {
   const route = to.substring(1) || 'stages';
+  // THIS IS WORKING ;)
   const activePath = routeMap[route].some(path => {
-    //Default route
     if(currentPathname === '/')
       return route === 'stages';
 
     return currentPathname.includes(path)
   });
-  return <Link to={to} style={styles.container} >
-    <View style={styles.container}>
-      <Ionicons name={icon} size={25} color={activePath ? '#00ef00' : '#fff'} />
-      <Text style={[styles.navigationText, { color: activePath ? '#00ef00' : '#fff'}]}>
-        {label}
-      </Text>
-    </View>
-  </Link>;
+  return <View style={styles.container}>
+      <Link to={to}>
+        <Text style={[styles.navigationText, { color: activePath ? '#00ef00' : '#fff'}]}>
+          {label}
+        </Text>
+      </Link>
+    </View>;
 }
 
 export default NavigationButton;

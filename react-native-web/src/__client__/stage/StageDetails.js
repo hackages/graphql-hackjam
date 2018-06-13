@@ -83,5 +83,4 @@ StageDetails.propTypes = {
   }).isRequired
 }
 
-//export default StageDetails;
 export default StageDetails;

@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {FlatList, ScrollView, Text, View} from 'react-native';
 import {graphql} from 'react-apollo';
-// import axios from 'axios';
 
-// import {serverUrl} from '../config/server';
 import ArtistRow from './ArtistRow';
 import GET_ARTISTS_QUERY from './getArtists.graphql';
 
 class Artists extends Component {
-  renderItem = ({item}) => {
-    return <ArtistRow artist={item}/>
+  renderItem = ({item: artist}) => {
+    return <ArtistRow artist={artist}/>
   };
 
   renderSeparator = () => (
@@ -17,7 +15,7 @@ class Artists extends Component {
   );
 
   renderHeader = () => (
-      this.props.data.artists
+      null
           ? null
           : <View style={{ height: 30, backgroundColor: "#5E5EB4", justifyContent: "center", alignItems: 'center' }} >
               <Text style={{color: 'white'}}> All Artists</Text>
