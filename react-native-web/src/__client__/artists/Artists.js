@@ -3,7 +3,14 @@ import {FlatList, ScrollView, Text, View} from 'react-native';
 import {graphql} from 'react-apollo';
 
 import ArtistRow from './ArtistRow';
-import GET_ARTISTS_QUERY from './getArtists.graphql';
+import gql from 'graphql-tag';
+
+const GET_ARTISTS = gql`
+{
+  goodLuck
+}
+`;
+
 
 class Artists extends Component {
   renderItem = ({item: artist}) => {

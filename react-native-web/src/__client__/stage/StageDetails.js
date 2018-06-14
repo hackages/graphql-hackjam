@@ -8,7 +8,9 @@ import moment from 'moment';
 import ArtistRow from '../artists/ArtistRow';
 
 import {graphql} from 'react-apollo';
-import GET_DETAILS_QUERY from './getDetails.graphql';
+import gql from 'graphql-tag';
+
+const GET_DETAILS_QUERY = null;
 
 class StageDetails extends Component {
   /*

@@ -2,8 +2,11 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import StageOverviewCard from './StageOverviewCard';
 import { graphql } from 'react-apollo';
-import GET_STAGE_QUERY from './getStages.graphql';
+import gql from 'graphql-tag';
 
+const STAGES_QUERY = `{
+  TODO
+}`
 // TODO
 
 // Add the Query component from react-apollo to get all stages
