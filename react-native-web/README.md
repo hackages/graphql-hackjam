@@ -22,7 +22,7 @@ Front-end: https://www.apollographql.com/client
 
 ##### Backend
 Create the typeDefinitions and resolvers in `schema/index.js`.
-Only add the minimum required to add a `stages` Query. (Write everything in the `schema/index.js`)
+ONLY add the minimum required to add a `stages` Query. (Write everything in the `schema/index.js`)
 See if it's working well by going to `localhost:3010/graphiql` 
 (or setup your IDE to execute GraphQL queries and have auto-completion from your schema within your IDE)
 
