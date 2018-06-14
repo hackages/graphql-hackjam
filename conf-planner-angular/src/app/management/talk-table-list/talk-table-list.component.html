@@ -1,0 +1,36 @@
+<div>
+  <cp-page-header
+    [headers]="['Talks']"
+  >
+    <span class="title is-4 is-info is-pulled-right ">
+      <a
+        class="icon is-large"
+        routerLink="/secure/talk"
+      >
+        <i class="fa fa-plus-circle"></i>
+      </a>
+      </span>
+  </cp-page-header>
+
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <cp-table
+            [labels]="['ID', 'title', 'Room', 'Starts At']"
+            [amountPerPage]="amountPerPage"
+            [total]="total"
+            [pageNumber]="pageNumber"
+            [navigateToPage]="navigateToPage"
+          >
+            <tr cp-talk-table-row *ngFor="let talk of talks"
+                [talk]="talk"
+                [deleteTalk]="deleteTalk"
+            >
+            </tr>
+          </cp-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

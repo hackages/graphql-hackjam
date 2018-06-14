@@ -1,0 +1,44 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th *ngFor="let label of labels">
+      <abbr [title]="label">{{label}}</abbr>
+    </th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+    <th *ngFor="let label of labels">
+      <abbr [title]="label">{{label}}</abbr>
+    </th>
+  </tr>
+  </tfoot>
+  <ng-content></ng-content>
+</table>
+
+<nav class="pagination">
+  <a
+    class="pagination-previous"
+    title="This is the first page"
+    [attr.disabled]="isDisabled(total, amountPerPage, pageNumber, -1)"
+    (click)="!isDisabled(total, amountPerPage, pageNumber, -1) && navigateToPage(pageNumber - 1)"
+  >
+    Previous
+  </a>
+  <a
+    class="pagination-next"
+    [attr.disabled]="isDisabled(total, amountPerPage, pageNumber, 1)"
+    (click)="!isDisabled(total, amountPerPage, pageNumber, 1) && navigateToPage(pageNumber + 1)"
+  >Next page</a>
+  <ul class="pagination-list">
+    <li *ngFor="let page of pagesArray; let i = index;">
+      <a
+        class="pagination-link"
+        [class.is-current]="pageNumber === (i + 1)"
+        (click)="navigateToPage(i + 1)">
+        {{i + 1}}
+      </a>
+    </li>
+  </ul>
+</nav>
+

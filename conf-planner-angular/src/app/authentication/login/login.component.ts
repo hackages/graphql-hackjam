@@ -1,10 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Subscription} from 'rxjs/Subscription';
 import {unsubscribeAll} from '../../utils';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/empty';
+import {Subscription, empty} from 'rxjs';
 
 @Component({
   selector: 'cp-login-component',
@@ -30,7 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   login(values: { email: string, password: string }) {
 
     // TODO: Write LoginMutation and execute it
-    const loginMutation$ = Observable.empty()
+    const loginMutation$ = empty()
       .subscribe(({ data }) => {
         this.userNotFound = false;
         this.publicName = data.signinUser.user.publicName;

@@ -1,0 +1,15 @@
+<div class="container section">
+  <div class="columns section">
+    <div class="column is-8">
+      <div class="title">Conferences</div>
+    </div>
+  </div>
+  <div class="columns" *ngFor="let conferenceChunk of chunkConferences(allConferences)">
+    <div class="column is-4"
+         *ngFor="let conference of conferenceChunk">
+      <a [routerLink]="['/conference/', conference.id]">
+        <cp-conference-card [conference]="conference"></cp-conference-card>
+      </a>
+    </div>
+  </div>
+</div>
