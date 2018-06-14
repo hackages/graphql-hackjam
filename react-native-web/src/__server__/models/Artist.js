@@ -5,7 +5,7 @@ class Artist {
     return artists;
   }
 
-  findById({artistId}) {
+  findById({ artistId }) {
     return artists.find(artist => artist.id === artistId);
   }
 }

@@ -6,8 +6,8 @@ class Schedule {
     return schedules;
   }
 
-  findById({scheduleId}) {
-    return schedules.find(schedule => schedule.id === scheduleId)
+  findById({ scheduleId }) {
+    return schedules.find(schedule => schedule.id === scheduleId);
   }
 }
 

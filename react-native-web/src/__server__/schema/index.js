@@ -1,4 +1,4 @@
-import {makeExecutableSchema} from 'graphql-tools';
+import { makeExecutableSchema } from 'graphql-tools';
 import Stage from '../models/Stage';
 import Schedule from '../models/Schedule';
 import Artist from '../models/Artist';
@@ -8,9 +8,9 @@ import Artist from '../models/Artist';
 
 const resolvers = {
   Query: {
-    hello: () => "World"
-  }
-}
+    hello: () => 'World',
+  },
+};
 const typeDefs = `
   type Query {
     hello: String
@@ -19,7 +19,7 @@ const typeDefs = `
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
 });
 
 export default schema;

@@ -5,9 +5,9 @@ class Stage {
     return stages;
   }
 
-  findById({stageId}) {
+  findById({ stageId }) {
     return stages
-      .find(stage => stage.id === stageId)
+      .find(stage => stage.id === stageId);
   }
 }
 

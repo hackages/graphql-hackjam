@@ -1,12 +1,12 @@
 import React from 'react';
-import {Text, View, StyleSheet, ImageBackground} from 'react-native';
+import { Text, View, StyleSheet, ImageBackground } from 'react-native';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Stage = ({stage: { name, imageUrl, id}}) => (
+const Stage = ({ stage: { name, imageUrl, id } }) => (
   <Link to={`/stage/${id}`}>
     <View>
-      <ImageBackground source={{uri: imageUrl}} style={styles.backgroundImage}>
+      <ImageBackground source={{ uri: imageUrl }} style={styles.backgroundImage}>
         <Text style={styles.name}> {name} </Text>
       </ImageBackground>
     </View>
@@ -18,7 +18,7 @@ Stage.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
-  }).isRequired
+  }).isRequired,
 };
 
 export default Stage;
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     shadowColor: 'grey',
     shadowOffset: {
       width: 2,
-      height: 2
+      height: 2,
     },
     color: 'white',
     fontWeight: 'bold',
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 300,
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });

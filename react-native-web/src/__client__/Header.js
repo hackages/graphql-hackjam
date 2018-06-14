@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Header = ({style}) => (
+const Header = ({ style }) => (
   <View style={[styles.container, style]}>
     <Text style={styles.title}> Music Festival App </Text>
   </View>
@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
     shadowColor: 'grey',
     shadowOffset: {
       width: 2,
-      height: 2
+      height: 2,
     },
   },
   title: {
     color: 'white',
     fontSize: 16,
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+  },
 });
