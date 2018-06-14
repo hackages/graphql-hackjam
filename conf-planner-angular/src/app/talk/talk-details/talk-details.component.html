@@ -1,0 +1,36 @@
+<div>
+  <cp-page-header
+    [headers]="[talk?.title]"
+  >
+    <div class="columns">
+      <div class="column">
+        <span class="subtitle is-6">Room: {{talk?.room}}</span>
+        <span class="subtitle is-6 has-text-muted">&nbsp;|&nbsp;</span>
+        <span class="subtitle is-6">Start at: {{talk?.startsAt | date:'HH:mm'}}</span>
+      </div>
+    </div>
+  </cp-page-header>
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <p class="title is-4 has-text-muted">
+            {{talk?.description}}
+          </p>
+          <hr/>
+          <p class="title is-4">
+            Speaker :
+          </p>
+          <div class="columns">
+            <div class="column is-3" *ngIf="talk?.speaker">
+              <cp-speaker-card
+                [speaker]="talk.speaker"
+              >
+              </cp-speaker-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

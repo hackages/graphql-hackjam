@@ -1,0 +1,14 @@
+{
+  "name": "schema",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "graphql": "^0.10.3",
+    "graphql-server-express": "^0.9.0"
+  }
+}

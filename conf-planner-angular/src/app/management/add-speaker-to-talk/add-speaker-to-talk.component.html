@@ -1,0 +1,45 @@
+<cp-page-header
+  [headers]="['Talks', 'Management', 'Add or remove speaker on talk']"
+>
+</cp-page-header>
+
+<div class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-4 ">
+        <nav class="panel">
+          <p class="panel-heading">
+            Speaker List
+          </p>
+          <cp-speaker-row
+            *ngFor="let speaker of speakers"
+            [attending]="false"
+            [speaker]="speaker"
+            [onClick]="addSpeaker"
+          >
+          </cp-speaker-row>
+
+        </nav>
+      </div>
+      <div class="column is-4 is-offset-2">
+        <nav class="panel">
+          <p class="panel-heading">
+            Talk Speaker
+          </p>
+          <cp-speaker-row
+            [attending]="true"
+            [speaker]="speakerOnTalk"
+            [onClick]="deleteSpeaker"
+            *ngIf="speakerOnTalk"
+          >
+          </cp-speaker-row>
+
+          <a class="panel-block" *ngIf="!speakerOnTalk">
+            No speaker yet on this talk
+          </a>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

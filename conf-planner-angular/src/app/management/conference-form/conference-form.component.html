@@ -1,0 +1,143 @@
+<cp-page-header
+  [headers]="['Conferences', 'Management', 'Add|update']"
+>
+</cp-page-header>
+
+<cp-success-modal
+  [isVisible]="showModalSuccess"
+  title="Success"
+  [subTitle]=""
+  [text]="'The conference has successfully been ' + (idParam ? 'updated' : 'added')">
+</cp-success-modal>
+
+<form
+  novalidate
+  [formGroup]="conferenceForm"
+  class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">City*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('city').invalid && conferenceForm.get('city').dirty"
+              type="text"
+              placeholder="Text input"
+              formControlName="city"
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Country iso-code*</label>
+          <span>Please choose a alpha-3 from : https://fr.wikipedia.org/wiki/ISO_3166-1</span>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('country').invalid && conferenceForm.get('country').dirty"
+              type="text"
+              placeholder="Text input"
+              formControlName="country"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Description*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('description').invalid && conferenceForm.get('description').dirty"
+              type="text"
+              placeholder="A cool description"
+              formControlName="description"
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Start date*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('startDate').invalid && conferenceForm.get('startDate').dirty"
+              type="text"
+              placeholder="01/01/2017"
+              formControlName="startDate"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">End date*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('endDate').invalid && conferenceForm.get('endDate').dirty"
+              type="text"
+              placeholder="01/01/2017"
+              formControlName="endDate"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Logo*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('logo').invalid && conferenceForm.get('logo').dirty"
+              type="text"
+              placeholder="http://image-google.png"
+              formControlName="logo"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Name*</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('name').invalid && conferenceForm.get('name').dirty"
+              type="text"
+              placeholder="My Conference"
+              formControlName="name"
+              required
+            />
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Website</label>
+          <p class="control">
+            <input
+              class="input"
+              [class.is-danger]="conferenceForm.get('website').invalid && conferenceForm.get('website').dirty"
+              type="text"
+              placeholder="http://my-website.com"
+              formControlName="website"
+            />
+          </p>
+        </div>
+
+        <div class="field is-grouped">
+          <p class="control">
+            <button
+              class="button"
+              [class.is-danger]="conferenceForm.invalid"
+              [class.is-info]="conferenceForm.valid"
+              [disabled]="conferenceForm.invalid"
+              (click)="submitConference($event)"
+            >
+              <span *ngIf="!idParam">Add</span>
+              <span *ngIf="idParam">Update</span>
+            </button>
+          </p>
+          <p class="control">
+            <a routerLink="/secure/conferences" class="button is-link">Cancel</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

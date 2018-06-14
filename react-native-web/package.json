@@ -1,0 +1,57 @@
+{
+  "name": "react-native-music-festival-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "jest-expo": "23.0.0",
+    "nodemon": "^1.12.7",
+    "react-native-scripts": "1.8.1",
+    "react-scripts": "^1.1.4",
+    "react-test-renderer": "16.0.0"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "start:server": "nodemon --watch src src/__server__/index.js --exec babel-node",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.2.3",
+    "apollo-client": "^2.3.3",
+    "apollo-client-preset": "^1.0.5",
+    "apollo-link": "^1.2.2",
+    "apollo-link-error": "^1.1.0",
+    "apollo-link-http": "^1.5.4",
+    "apollo-server-express": "^1.3.0",
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "expo": "^23.0.4",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-tag": "^2.6.0",
+    "graphql-tools": "^2.13.0",
+    "moment": "^2.19.4",
+    "react": "16.0.0",
+    "react-apollo": "^2.1.5",
+    "react-art": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-native": "0.50.3",
+    "react-native-linear-gradient": "^2.3.0",
+    "react-native-web": "^0.8.3",
+    "react-router-dom": "^4.3.1"
+  }
+}
